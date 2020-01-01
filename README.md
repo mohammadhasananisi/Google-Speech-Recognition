@@ -83,3 +83,7 @@ venv will create a virtual Python installation in the env folder.
 <pre>
     .\env\Scripts\activate
 </pre>
+
+if you 
+
+If you do not understand, you can go to your home virtual environment from [here](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
