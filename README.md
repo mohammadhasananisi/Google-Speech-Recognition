@@ -1,5 +1,4 @@
-# recognize speech using Google Speech Recognition to persian
-SpeechRecognition
+SpeechRecognition installation
 =================
 
 Library for performing speech recognition, with support for several engines and APIs, online and offline.
@@ -26,7 +25,7 @@ Project links:
 -  `Source code <https://github.com/Uberi/speech_recognition>`
 -  `Issue tracker <https://github.com/Uberi/speech_recognition/issues>`
 
-# Use Persian
+# recognize speech using Google Speech Recognition to persian
 <pre>
 import speech_recognition as sr
 
@@ -44,4 +43,43 @@ except sr.UnknownValueError:
 except sr.RequestError as e:
 	print("Could not request results from Google Speech Recognition service; {0}".format(e))
 </pre>
-**if you want to use on other language just change this code  r.recognize_google(audio, language = "en-US")**
+**if you want to use on other language just change this code  `r.recognize_google(audio, language = "en-US")`**
+
+
+# If you had trouble installing, you couldn't install
+
+**Keep it in a virtual environment**
+To install 
+On macOS and Linux:
+<pre>
+    python3 -m pip install --user virtualenv
+</pre>
+On Windows:
+<pre>
+    py -m pip install --user virtualenv
+</pre>
+
+
+To create a virtual environment, go to your project’s directory and run venv. If you are using Python 2, replace venv with virtualenv in the below commands.
+
+**On macOS and Linux:**
+<pre>
+    python3 -m venv env
+</pre>
+**On Windows:**
+<pre>
+    py -m venv env
+</pre>
+The second argument is the location to create the virtual environment. Generally, you can just create this in your project and call it env.
+
+venv will create a virtual Python installation in the env folder.
+
+**On macOS and Linux:**
+<pre>
+    source env/bin/activate
+</pre>
+
+**On Windows:**
+<pre>
+    .\env\Scripts\activate
+</pre>
