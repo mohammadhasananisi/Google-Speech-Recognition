@@ -2,26 +2,6 @@
 SpeechRecognition
 =================
 
-.. image:: https://img.shields.io/pypi/v/SpeechRecognition.svg
-    :target: https://pypi.python.org/pypi/SpeechRecognition/
-    :alt: Latest Version
-
-.. image:: https://img.shields.io/pypi/status/SpeechRecognition.svg
-    :target: https://pypi.python.org/pypi/SpeechRecognition/
-    :alt: Development Status
-
-.. image:: https://img.shields.io/pypi/pyversions/SpeechRecognition.svg
-    :target: https://pypi.python.org/pypi/SpeechRecognition/
-    :alt: Supported Python Versions
-
-.. image:: https://img.shields.io/pypi/l/SpeechRecognition.svg
-    :target: https://pypi.python.org/pypi/SpeechRecognition/
-    :alt: License
-
-.. image:: https://api.travis-ci.org/Uberi/speech_recognition.svg?branch=master
-    :target: https://travis-ci.org/Uberi/speech_recognition
-    :alt: Continuous Integration Test Results
-
 Library for performing speech recognition, with support for several engines and APIs, online and offline.
 
 Speech recognition engine/API support:
@@ -42,9 +22,29 @@ To quickly try it out, run ``python -m speech_recognition`` after installing.
 
 Project links:
 
--  `PyPI <https://pypi.python.org/pypi/SpeechRecognition/>`__
--  `Source code <https://github.com/Uberi/speech_recognition>`__
--  `Issue tracker <https://github.com/Uberi/speech_recognition/issues>`__
+-  `PyPI <https://pypi.python.org/pypi/SpeechRecognition/>`
+-  `Source code <https://github.com/Uberi/speech_recognition>`
+-  `Issue tracker <https://github.com/Uberi/speech_recognition/issues>`
 
+# Use Persian
 
-# گفتار را با استفاده از تشخیص گفتار گوگل به زبان فارسی بازشناسی کنید
+import speech_recognition as sr
+
+r = sr.Recognizer()
+with sr.Microphone() as source:
+	print("Say something!")
+	audio = r.listen(source)
+
+try:
+	# for testing purposes, we're just using the default API key
+	# to use another API key, use `r.recognize_google(audio, key="GOOGLE_SPEECH_RECOGNITION_API_KEY")`
+	# instead of `r.recognize_google(audio)`
+	print("Google Speech Recognition thinks you said in English: -  " + r.recognize_google(audio, language = "en-US"))
+	print("Google Speech Recognition thinks you said in Turkish: -  " + r.recognize_google(audio, language = "tr-TR"))
+	print("Google Speech Recognition thinks you said in fa-IR: -  " + r.recognize_google(audio,language='fa-IR'))
+except sr.UnknownValueError:
+	print("Google Speech Recognition could not understand audio")
+except sr.RequestError as e:
+	print("Could not request results from Google Speech Recognition service; {0}".format(e))
+    
+** if you want to use on other language just change this code  r.recognize_google(audio, language = "en-US")  **

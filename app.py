@@ -1,4 +1,3 @@
-
 # pip install SpeechRecognition
 # https://pypi.python.org/pypi/SpeechRecognition/
 # recognizer_instance.recognize_google(audio_data, key = None, language = "en-US", show_all = False)
@@ -23,7 +22,7 @@ try:
 	# instead of `r.recognize_google(audio)`
 	print("Google Speech Recognition thinks you said in English: -  " + r.recognize_google(audio, language = "en-US"))
 	print("Google Speech Recognition thinks you said in Turkish: -  " + r.recognize_google(audio, language = "tr-TR"))
-	print("Google Speech Recognition thinks you said in fa-IR: -  " + r.recognize_google(audio,language='fa-IR'))
+	print("Google Speech Recognition thinks you said in persian: -  " + r.recognize_google(audio,language='fa-IR'))
 except sr.UnknownValueError:
 	print("Google Speech Recognition could not understand audio")
 except sr.RequestError as e:
