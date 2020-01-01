@@ -27,21 +27,21 @@ Project links:
 -  `Issue tracker <https://github.com/Uberi/speech_recognition/issues>`
 
 # Use Persian
+<pre>
+import speech_recognition as sr
 
-`import speech_recognition as sr`
+r = sr.Recognizer()
+with sr.Microphone() as source:
+	print("Say something!")
+	audio = r.listen(source)
 
-`r = sr.Recognizer()`
-`with sr.Microphone() as source:`
-    `print("Say something!")`
-    `audio = r.listen(source)`
-
-`try:`
-	`print("Google Speech Recognition thinks you said in English: -  " + r.recognize_google(audio, language = "en-US"))`
-	`print("Google Speech Recognition thinks you said in Turkish: -  " + r.recognize_google(audio, language = "tr-TR"))`
-	`print("Google Speech Recognition thinks you said in fa-IR: -  " + r.recognize_google(audio,language='fa-IR'))`
-`except sr.UnknownValueError:`
-	`print("Google Speech Recognition could not understand audio")`
-`except sr.RequestError as e:`
-	`print("Could not request results from Google Speech Recognition service; {0}".format(e))`
-    
+try:
+	print("Google Speech Recognition thinks you said in English: -  " + r.recognize_google(audio, language = "en-US"))
+	print("Google Speech Recognition thinks you said in Turkish: -  " + r.recognize_google(audio, language = "tr-TR"))
+	print("Google Speech Recognition thinks you said in fa-IR: -  " + r.recognize_google(audio,language='fa-IR'))
+except sr.UnknownValueError:
+	print("Google Speech Recognition could not understand audio")
+except sr.RequestError as e:
+	print("Could not request results from Google Speech Recognition service; {0}".format(e))
+</pre>
 **if you want to use on other language just change this code  r.recognize_google(audio, language = "en-US")**
